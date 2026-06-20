@@ -9,7 +9,9 @@
     "throttle_sec": 0.2,
     "analysis_concurrency": 1,
     "enrichment_concurrency": 1,
-    "languages": ["zh"]
+    "languages": [
+      "zh"
+    ]
   },
   "email": {
     "enabled": false,
@@ -57,6 +59,60 @@
       {
         "name": "Medical Xpress",
         "url": "https://medicalxpress.com/rss-feed/",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "Nature Medicine",
+        "url": "https://www.nature.com/nm.rss",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "Nature Biotechnology",
+        "url": "https://www.nature.com/nbt.rss",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "Nature Medicine Research",
+        "url": "https://www.nature.com/naturemedicine.rss",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "STAT News",
+        "url": "https://www.statnews.com/feed/",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "CIDRAP",
+        "url": "https://www.cidrap.umn.edu/rss.xml",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "Fierce Biotech",
+        "url": "https://www.fiercebiotech.com/rss/xml",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "Fierce Pharma",
+        "url": "https://www.fiercepharma.com/rss/xml",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "Pharmaceutical Technology",
+        "url": "https://www.pharmaceutical-technology.com/feed/",
+        "enabled": true,
+        "category": "medicine"
+      },
+      {
+        "name": "medRxiv",
+        "url": "https://connect.medrxiv.org/medrxiv_xml.php?subject=all",
         "enabled": true,
         "category": "medicine"
       }
@@ -110,14 +166,16 @@
     "ossinsight": {
       "enabled": false,
       "period": "past_24_hours",
-      "languages": ["All"],
+      "languages": [
+        "All"
+      ],
       "keywords": [],
       "min_stars": 10,
       "max_items": 30
     }
   },
   "filtering": {
-    "ai_score_threshold": 6.5,
+    "ai_score_threshold": 0,
     "time_window_hours": 24,
     "max_items": 12,
     "category_groups": {},
@@ -132,8 +190,11 @@
     "platform": "feishu",
     "layout": "collapsible",
     "fallback_layout": "markdown",
-    "languages": ["zh"],
+    "languages": [
+      "zh"
+    ],
     "request_body": {},
-    "headers": ""
+    "headers": "",
+    "message_title": "医疗圈｜Horizon 每日速递 #{date}"
   }
 }

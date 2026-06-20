@@ -337,6 +337,20 @@ class WebhookNotifier:
         layout = getattr(self.config, "layout", "markdown")
         return _is_feishu_platform(platform) and layout == "collapsible"
 
+    def _message_title(self, default: str, date: str, lang: str) -> str:
+        """Return a configured webhook/card title or a default title."""
+        configured = getattr(self.config, "message_title", None)
+        if not configured:
+            return default
+        rendered = _render(
+            configured,
+            {
+                "date": date,
+                "language": lang,
+            },
+        )
+        return str(rendered)
+
     def _build_feishu_collapsible_overview(
         self,
         item_count: int,
@@ -414,10 +428,14 @@ class WebhookNotifier:
                 "header": {
                     "title": {
                         "tag": "plain_text",
-                        "content": (
-                            f"Horizon {date} 折叠日报"
-                            if lang == "zh"
-                            else f"Horizon {date} Collapsible Daily"
+                        "content": self._message_title(
+                            (
+                                f"Horizon {date} 折叠日报"
+                                if lang == "zh"
+                                else f"Horizon {date} Collapsible Daily"
+                            ),
+                            date,
+                            lang,
                         ),
                     },
                     "template": "blue",
@@ -464,10 +482,14 @@ class WebhookNotifier:
             return [
                 {
                     **base_vars,
-                    "message_title": (
-                        f"Horizon {date} 折叠日报"
-                        if lang == "zh"
-                        else f"Horizon {date} Collapsible Daily"
+                    "message_title": self._message_title(
+                        (
+                            f"Horizon {date} 折叠日报"
+                            if lang == "zh"
+                            else f"Horizon {date} Collapsible Daily"
+                        ),
+                        date,
+                        lang,
                     ),
                     "message_kind": "collapsible",
                     "summary": self._build_feishu_collapsible_overview(

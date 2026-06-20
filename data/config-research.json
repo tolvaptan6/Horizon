@@ -9,7 +9,9 @@
     "throttle_sec": 0.2,
     "analysis_concurrency": 1,
     "enrichment_concurrency": 1,
-    "languages": ["zh"]
+    "languages": [
+      "zh"
+    ]
   },
   "email": {
     "enabled": false,
@@ -45,6 +47,54 @@
       {
         "name": "ScienceDaily",
         "url": "https://www.sciencedaily.com/rss/all.xml",
+        "enabled": true,
+        "category": "research"
+      },
+      {
+        "name": "PNAS Current Issue",
+        "url": "https://www.pnas.org/rss/current.xml",
+        "enabled": true,
+        "category": "research"
+      },
+      {
+        "name": "Cell Current Issue",
+        "url": "https://www.cell.com/cell/current.rss",
+        "enabled": true,
+        "category": "research"
+      },
+      {
+        "name": "Cell In Press",
+        "url": "https://www.cell.com/cell/inpress.rss",
+        "enabled": true,
+        "category": "research"
+      },
+      {
+        "name": "PLOS Biology",
+        "url": "https://journals.plos.org/plosbiology/feed/atom",
+        "enabled": true,
+        "category": "research"
+      },
+      {
+        "name": "Quanta Magazine",
+        "url": "https://www.quantamagazine.org/feed/",
+        "enabled": true,
+        "category": "research"
+      },
+      {
+        "name": "MIT News Research",
+        "url": "https://news.mit.edu/rss/topic/research",
+        "enabled": true,
+        "category": "research"
+      },
+      {
+        "name": "Phys.org",
+        "url": "https://phys.org/rss-feed/",
+        "enabled": true,
+        "category": "research"
+      },
+      {
+        "name": "bioRxiv",
+        "url": "https://connect.biorxiv.org/biorxiv_xml.php?subject=all",
         "enabled": true,
         "category": "research"
       }
@@ -98,14 +148,24 @@
     "ossinsight": {
       "enabled": true,
       "period": "past_24_hours",
-      "languages": ["All", "Python", "Jupyter Notebook"],
-      "keywords": ["science", "research", "bio", "medical", "ai"],
+      "languages": [
+        "All",
+        "Python",
+        "Jupyter Notebook"
+      ],
+      "keywords": [
+        "science",
+        "research",
+        "bio",
+        "medical",
+        "ai"
+      ],
       "min_stars": 20,
       "max_items": 20
     }
   },
   "filtering": {
-    "ai_score_threshold": 6.5,
+    "ai_score_threshold": 0,
     "time_window_hours": 24,
     "max_items": 12,
     "category_groups": {},
@@ -120,8 +180,11 @@
     "platform": "feishu",
     "layout": "collapsible",
     "fallback_layout": "markdown",
-    "languages": ["zh"],
+    "languages": [
+      "zh"
+    ],
     "request_body": {},
-    "headers": ""
+    "headers": "",
+    "message_title": "科研圈｜Horizon 每日速递 #{date}"
   }
 }

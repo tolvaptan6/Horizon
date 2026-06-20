@@ -297,6 +297,7 @@ class WebhookConfig(BaseModel):
     languages: Optional[List[str]] = (
         None  # Optional language filter for webhook delivery; defaults to all AI languages
     )
+    message_title: Optional[str] = None  # Optional custom webhook/card title
     enabled: bool = False
 
     @field_validator("delivery")
