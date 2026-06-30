@@ -1,9 +1,10 @@
 name: Triple Horizon Daily Briefing
 
 on:
-  schedule:
-    # 07:00 Asia/Shanghai = 23:00 UTC on the previous day.
-    - cron: "0 23 * * *"
+  # Paused: daily schedule disabled. Use workflow_dispatch to run manually.
+  # schedule:
+  #   # 07:00 Asia/Shanghai = 23:00 UTC on the previous day.
+  #   - cron: "0 23 * * *"
   workflow_dispatch:
 
 jobs:
